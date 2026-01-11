@@ -90,11 +90,13 @@ const Footer: React.FC = () => {
         </div>
       </div>
       
+      {/* Floating WhatsApp Button - Optimized for Mobile */}
       <a 
         href={`https://wa.me/${STUDIO_DATA.whatsapp}`} 
-        className="fixed bottom-10 right-10 z-[110] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform md:hidden"
+        className="fixed bottom-6 right-6 z-[110] bg-[#25D366] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform md:hidden"
+        aria-label="Contact on WhatsApp"
       >
-        <i className="fab fa-whatsapp text-4xl"></i>
+        <i className="fab fa-whatsapp text-2xl"></i>
       </a>
     </footer>
   );
