@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     <>
       <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'py-3' : 'py-6'}`}>
         <div className="container mx-auto px-4">
-          <div className={`glass-morphism rounded-full px-6 py-2 flex justify-between items-center transition-all ${isScrolled ? 'bg-black/90 border-white/10' : 'bg-transparent border-transparent'}`}>
+          <div className={`glass-morphism rounded-full px-6 py-2 flex justify-between items-center transition-all bg-transparent border-transparent`}>
             <a href="#home" className="flex items-center group" onClick={() => setIsMobileMenuOpen(false)}>
               <div className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 border-2 border-[#d4af37] rotate-45 group-hover:rotate-[225deg] transition-transform duration-700 overflow-hidden">
                 <span className="accent-font text-xl md:text-2xl text-[#d4af37] -rotate-45 group-hover:-rotate-[225deg] transition-transform duration-700">S</span>

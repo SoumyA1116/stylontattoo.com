@@ -1,8 +1,10 @@
 
 import React from 'react';
-import { STUDIO_DATA } from '../constants';
+import { STUDIO_DATA, APP_CONTENT } from '../constants';
 
 const Footer: React.FC = () => {
+  const { social } = APP_CONTENT;
+
   return (
     <footer id="contact" className="pt-24 pb-12 bg-black relative">
       <div className="container mx-auto px-6">
@@ -37,9 +39,15 @@ const Footer: React.FC = () => {
             </a>
 
             <div className="flex space-x-6">
-              <a href="#" className="text-3xl text-gray-500 hover:text-[#d4af37] transition-colors"><i className="fab fa-instagram"></i></a>
-              <a href="#" className="text-3xl text-gray-500 hover:text-[#d4af37] transition-colors"><i className="fab fa-facebook"></i></a>
-              <a href="#" className="text-3xl text-gray-500 hover:text-[#d4af37] transition-colors"><i className="fab fa-tiktok"></i></a>
+              <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-500 hover:text-[#d4af37] transition-colors">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href={social.facebook} target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-500 hover:text-[#d4af37] transition-colors">
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a href={social.youtube} target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-500 hover:text-[#d4af37] transition-colors">
+                <i className="fab fa-youtube"></i>
+              </a>
             </div>
           </div>
 

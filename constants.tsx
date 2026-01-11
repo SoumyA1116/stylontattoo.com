@@ -12,6 +12,11 @@ export const APP_CONTENT: AppContent = {
     heroImage: "https://images.unsplash.com/photo-1605647533135-51b5906087d0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&q=90&w=2400",
     aboutImage: "https://lh3.googleusercontent.com/p/AF1QipNCU78jffEuT5aNPmpKH62uYcUBHrR1wvEGSNut=s4000?auto=format&fit=crop&q=90&w=1200"
   },
+  social: {
+    instagram: "https://instagram.com/stylontattoo",
+    facebook: "https://facebook.com/stylontattoo",
+    youtube: "https://youtube.com/@stylontattoo"
+  },
   artists: [
     {
       name: "Victor Thorne",
@@ -75,7 +80,6 @@ export const APP_CONTENT: AppContent = {
   ]
 };
 
-// Backwards compatibility for single studio info exports if needed elsewhere
 export const STUDIO_DATA = APP_CONTENT.studio;
 export const TATTOO_STYLES = APP_CONTENT.styles;
 export const GALLERY_IMAGES = APP_CONTENT.gallery;

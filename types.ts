@@ -36,8 +36,15 @@ export interface StudioInfo {
   aboutImage: string;
 }
 
+export interface SocialLinks {
+  instagram: string;
+  facebook: string;
+  youtube: string;
+}
+
 export interface AppContent {
   studio: StudioInfo;
+  social: SocialLinks;
   artists: Artist[];
   styles: TattooStyle[];
   gallery: GalleryImage[];
