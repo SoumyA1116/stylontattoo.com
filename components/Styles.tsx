@@ -11,29 +11,29 @@ const Styles: React.FC = () => {
           <h2 className="heading-font text-6xl md:text-8xl font-light uppercase tracking-tighter leading-none text-white">Curated <span className="text-[#d4af37]">Styles</span></h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {TATTOO_STYLES.map((style, idx) => (
-            <div key={style.id} className="group relative liquid-border overflow-hidden bg-zinc-950 p-1">
-              <div className="relative h-[500px] overflow-hidden">
+            <div key={style.id} className="group relative liquid-border image-curve bg-zinc-950 p-1">
+              <div className="relative h-[550px] rounded-[inherit] overflow-hidden">
                 <img
                   src={style.image}
                   alt={style.name}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1500ms] ease-out"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-[1500ms] ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
                 
-                <div className="absolute top-8 right-8">
-                  <span className="heading-font text-white/20 text-6xl font-black italic">0{idx + 1}</span>
+                <div className="absolute top-10 right-10">
+                  <span className="heading-font text-white/10 text-7xl font-black italic">0{idx + 1}</span>
                 </div>
 
                 <div className="absolute bottom-0 left-0 p-12 w-full translate-y-8 group-hover:translate-y-0 transition-transform duration-700">
-                  <h4 className="heading-font text-4xl md:text-5xl font-bold uppercase mb-4 text-white group-hover:text-[#d4af37] transition-colors tracking-tight">
+                  <h4 className="heading-font text-5xl font-bold uppercase mb-6 text-white group-hover:text-[#d4af37] transition-colors tracking-tight">
                     {style.name}
                   </h4>
-                  <p className="text-gray-400 font-light max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  <p className="text-gray-400 font-light max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 text-lg leading-relaxed">
                     {style.description}
                   </p>
-                  <div className="mt-8 overflow-hidden h-px w-0 group-hover:w-full bg-[#d4af37] transition-all duration-1000"></div>
+                  <div className="mt-8 h-px w-0 group-hover:w-full bg-[#d4af37] transition-all duration-1000"></div>
                 </div>
               </div>
             </div>

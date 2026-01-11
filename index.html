@@ -12,6 +12,9 @@
     :root {
       --accent: #d4af37;
       --glass: rgba(10, 10, 10, 0.8);
+      --curve-lg: 2.5rem;
+      --curve-md: 1.5rem;
+      --curve-sm: 1rem;
     }
     body {
       background-color: #050505;
@@ -21,7 +24,6 @@
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
     }
-    /* Updated accent-font to use Playfair Display for better readability */
     .accent-font { 
       font-family: 'Playfair Display', serif;
       font-weight: 400;
@@ -34,9 +36,13 @@
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
       border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--curve-md);
     }
     
-    .liquid-border { position: relative; }
+    .liquid-border { 
+      position: relative; 
+      border-radius: inherit;
+    }
     .liquid-border::after {
       content: '';
       position: absolute;
@@ -58,6 +64,16 @@
 
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .image-curve {
+      border-radius: var(--curve-lg);
+      overflow: hidden;
+    }
+
+    .image-curve-sm {
+      border-radius: var(--curve-md);
+      overflow: hidden;
+    }
 
     @keyframes slideUp {
       from { transform: translateY(20px); opacity: 0; }

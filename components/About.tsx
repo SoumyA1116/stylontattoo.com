@@ -8,16 +8,16 @@ const About: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-24">
           <div className="w-full lg:w-1/2 relative group">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
+            <div className="relative aspect-[4/5] image-curve shadow-2xl">
                <img
                 src={APP_CONTENT.studio.aboutImage}
                 alt="Studio interior"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
             </div>
-            <div className="absolute -bottom-6 -right-4 bg-[#d4af37] p-6 shadow-xl">
-              <span className="heading-font text-black text-3xl font-bold leading-none">15+</span>
-              <span className="block text-black text-[8px] uppercase tracking-widest font-bold mt-1">Years</span>
+            <div className="absolute -bottom-6 -right-4 bg-[#d4af37] p-8 shadow-xl rounded-[2rem] flex flex-col items-center">
+              <span className="heading-font text-black text-4xl font-bold leading-none">15+</span>
+              <span className="block text-black text-[10px] uppercase tracking-widest font-bold mt-1">Years</span>
             </div>
           </div>
 
@@ -37,11 +37,11 @@ const About: React.FC = () => {
                 { icon: 'fa-leaf', title: 'Ethical Canvas', desc: 'World-class organic pigments and 100% vegan equipment.' }
               ].map((item, i) => (
                 <div key={i} className="space-y-3 flex flex-col items-center lg:items-start">
-                  <div className="w-10 h-10 rounded-full border border-[#d4af37] flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl border border-[#d4af37] flex items-center justify-center">
                     <i className={`fas ${item.icon} text-[#d4af37] text-xs`}></i>
                   </div>
                   <h4 className="heading-font uppercase tracking-widest text-[11px] text-white">{item.title}</h4>
-                  <p className="text-gray-500 text-xs font-light max-w-[250px]">{item.desc}</p>
+                  <p className="text-gray-500 text-xs font-light max-w-[250px] leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>

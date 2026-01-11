@@ -14,10 +14,10 @@ const Artists: React.FC = () => {
           <div className="w-px h-12 md:h-24 bg-gradient-to-b from-[#d4af37] to-transparent mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-12">
           {APP_CONTENT.artists.map((artist, idx) => (
             <div key={idx} className="group relative flex flex-col items-center">
-              <div className="relative aspect-[3/4] w-full max-w-[320px] md:max-w-none overflow-hidden rounded-sm liquid-border bg-zinc-900 mb-6">
+              <div className="relative aspect-[3/4] w-full max-w-[320px] md:max-w-none image-curve liquid-border bg-zinc-900 mb-8">
                 <img 
                   src={artist.image} 
                   alt={artist.name} 
@@ -25,15 +25,15 @@ const Artists: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 md:opacity-60"></div>
                 
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <span className="heading-font text-[#d4af37] text-[9px] uppercase tracking-[0.4em] mb-1">{artist.specialty}</span>
-                  <div className="w-12 h-px bg-[#d4af37]/50"></div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <span className="heading-font text-[#d4af37] text-[10px] uppercase tracking-[0.4em] mb-2">{artist.specialty}</span>
+                  <div className="w-16 h-px bg-[#d4af37]/50 group-hover:w-full transition-all duration-700"></div>
                 </div>
               </div>
 
               <div className="text-center">
-                <h3 className="heading-font text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-1">{artist.name}</h3>
-                <p className="serif-font italic text-gray-500 text-sm md:text-lg">{artist.role}</p>
+                <h3 className="heading-font text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-2">{artist.name}</h3>
+                <p className="serif-font italic text-gray-500 text-base md:text-xl">{artist.role}</p>
               </div>
             </div>
           ))}
