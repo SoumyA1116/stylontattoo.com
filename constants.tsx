@@ -3,7 +3,7 @@ import { AppContent } from './types';
 
 export const APP_CONTENT: AppContent = {
   studio: {
-    name: "Ink & Iron",
+    name: "STYLON TATTOO",
     phone: "+1 (555) 012-3456",
     address: "42 Gothic Ave, Arts District, NY 10001",
     whatsapp: "15550123456",

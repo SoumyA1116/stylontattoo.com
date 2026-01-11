@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ink & Iron | Tattoo Studio</title>
+  <title>STYLON TATTOO | Premium Tattoo Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@200;300;400;600&family=Oswald:wght@200;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -47,13 +47,11 @@
       pointer-events: none;
     }
 
-    /* Mobile App-style active states */
     .btn-active:active {
       transform: scale(0.96);
       transition: transform 0.1s;
     }
 
-    /* Hide scrollbars but keep functionality */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -66,14 +64,17 @@
 <script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react": "https://esm.sh/react@19.0.0",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>
 </head>
 <body>
   <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
 </body>
 </html>

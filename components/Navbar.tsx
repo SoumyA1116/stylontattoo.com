@@ -28,9 +28,15 @@ const Navbar: React.FC = () => {
     <>
       <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'py-3' : 'py-6'}`}>
         <div className="container mx-auto px-4">
-          <div className={`glass-morphism rounded-full px-6 py-3 flex justify-between items-center transition-all ${isScrolled ? 'bg-black/90 border-white/10' : 'bg-transparent border-transparent'}`}>
-            <a href="#home" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-              <span className="accent-font text-xl md:text-3xl text-[#d4af37]">{STUDIO_DATA.name}</span>
+          <div className={`glass-morphism rounded-full px-6 py-2 flex justify-between items-center transition-all ${isScrolled ? 'bg-black/90 border-white/10' : 'bg-transparent border-transparent'}`}>
+            <a href="#home" className="flex items-center group" onClick={() => setIsMobileMenuOpen(false)}>
+              <div className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 border-2 border-[#d4af37] rotate-45 group-hover:rotate-[225deg] transition-transform duration-700 overflow-hidden">
+                <span className="accent-font text-xl md:text-2xl text-[#d4af37] -rotate-45 group-hover:-rotate-[225deg] transition-transform duration-700">S</span>
+              </div>
+              <div className="ml-4 flex flex-col leading-none">
+                <span className="heading-font text-white text-[10px] md:text-xs tracking-[0.4em] font-bold">STYLON</span>
+                <span className="heading-font text-[#d4af37] text-[8px] md:text-[10px] tracking-[0.6em] font-light">TATTOO</span>
+              </div>
             </a>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -39,7 +45,7 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-              <a href="#booking" className="heading-font uppercase tracking-[0.2em] text-[10px] bg-[#d4af37] text-black px-6 py-2 rounded-full font-bold">Inquiry</a>
+              <a href="#booking" className="heading-font uppercase tracking-[0.2em] text-[10px] bg-[#d4af37] text-black px-6 py-2 rounded-full font-bold hover:bg-white transition-colors">Inquiry</a>
             </div>
 
             <button 
@@ -55,6 +61,9 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-[95] md:hidden flex flex-col items-center justify-center space-y-8 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 translate-y-0 visible bg-black/95 backdrop-blur-xl' : 'opacity-0 -translate-y-full invisible'}`}>
+        <div className="mb-12 relative flex items-center justify-center w-24 h-24 border-2 border-[#d4af37] rotate-45">
+           <span className="accent-font text-5xl text-[#d4af37] -rotate-45">S</span>
+        </div>
         {navLinks.map((link, idx) => (
           <a
             key={link.name}

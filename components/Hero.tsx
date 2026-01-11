@@ -23,10 +23,10 @@ const Hero: React.FC = () => {
         </div>
         
         <h1 className="heading-font text-5xl sm:text-7xl md:text-[10rem] lg:text-[13rem] font-bold uppercase tracking-tighter leading-[0.9] mb-8 opacity-0 animate-[fadeInUp_1.2s_ease-out_0.2s_forwards] text-white">
-          {studio.name.split(' & ').map((word, i) => (
+          {studio.name.split(' ').map((word, i) => (
             <React.Fragment key={i}>
               <span className={i === 1 ? 'text-[#d4af37]' : ''}>{word}</span>
-              {i === 0 && <span className="text-white/20 block md:inline md:px-2">&</span>}
+              {i === 0 && <span className="inline-block w-2 md:w-6"></span>}
             </React.Fragment>
           ))}
         </h1>
