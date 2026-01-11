@@ -15,7 +15,6 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate asset loading or minimum wait for premium feel
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2500);
@@ -50,7 +49,7 @@ const App: React.FC = () => {
         <Hero />
         
         <div className="relative">
-           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-64 bg-gradient-to-b from-[#d4af37]/50 to-transparent"></div>
+           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 md:h-64 bg-gradient-to-b from-[#d4af37]/50 to-transparent"></div>
            <About />
         </div>
 
@@ -62,28 +61,28 @@ const App: React.FC = () => {
 
         <Blog />
         
-        <div className="relative bg-black py-20 overflow-hidden">
-           <div className="absolute top-0 right-0 w-96 h-96 bg-[#d4af37]/5 blur-[120px] rounded-full"></div>
+        <div className="relative bg-black py-12 md:py-20 overflow-hidden">
+           <div className="absolute top-0 right-0 w-48 md:w-96 h-48 md:h-96 bg-[#d4af37]/5 blur-[80px] md:blur-[120px] rounded-full"></div>
            <BookingForm />
         </div>
         
-        <section id="aftercare" className="py-32 bg-black border-y border-white/5">
+        <section id="aftercare" className="py-16 md:py-32 bg-black border-y border-white/5">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-16">
-                <span className="accent-font text-[#d4af37] text-2xl mb-4 block tracking-wider italic">Art Preservation</span>
-                <h2 className="heading-font text-5xl md:text-6xl font-light uppercase mb-6 tracking-[0.2em]">Aftercare</h2>
-                <div className="w-24 h-px bg-[#d4af37] mx-auto opacity-50"></div>
+              <div className="text-center mb-10 md:mb-16">
+                <span className="accent-font text-[#d4af37] text-xl md:text-2xl mb-2 block tracking-wider italic">Art Preservation</span>
+                <h2 className="heading-font text-3xl md:text-6xl font-light uppercase mb-4 tracking-[0.2em]">Aftercare</h2>
+                <div className="w-16 md:w-24 h-px bg-[#d4af37] mx-auto opacity-50"></div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
                 {APP_CONTENT.aftercare.map((step, idx) => (
-                  <div key={idx} className="glass-morphism liquid-border p-10 group hover:bg-white/[0.02] transition-all duration-700">
-                    <span className="heading-font text-[#d4af37]/30 text-4xl block mb-6 font-thin italic">
+                  <div key={idx} className="glass-morphism liquid-border p-6 md:p-10 group hover:bg-white/[0.02] transition-all duration-700">
+                    <span className="heading-font text-[#d4af37]/30 text-2xl md:text-4xl block mb-4 md:mb-6 font-thin italic">
                       {["I", "II", "III"][idx] || idx + 1}
                     </span>
-                    <h4 className="heading-font text-white text-xl mb-4 tracking-widest uppercase">{step.title}</h4>
-                    <p className="text-gray-400 font-light leading-relaxed text-sm">{step.desc}</p>
+                    <h4 className="heading-font text-white text-lg md:text-xl mb-2 md:mb-4 tracking-widest uppercase">{step.title}</h4>
+                    <p className="text-gray-400 font-light leading-relaxed text-[10px] md:text-sm">{step.desc}</p>
                   </div>
                 ))}
               </div>
@@ -116,10 +115,6 @@ const App: React.FC = () => {
             transform: translateY(0);
             filter: blur(0);
           }
-        }
-        @keyframes lineReveal {
-          from { width: 0; }
-          to { width: 100%; }
         }
         .ease-expo {
           transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
