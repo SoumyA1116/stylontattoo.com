@@ -21,6 +21,7 @@ const Navbar: React.FC = () => {
     { name: 'Artists', href: '#artists' },
     { name: 'Styles', href: '#styles' },
     { name: 'Gallery', href: '#gallery' },
+    { name: 'Journal', href: '#blog' },
     { name: 'Booking', href: '#booking' },
   ];
 

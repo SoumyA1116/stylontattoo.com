@@ -77,6 +77,44 @@ export const APP_CONTENT: AppContent = {
     { title: "I. Protection", desc: "The first 72 hours are critical. Treat your skin as a masterpiece in progress. Gentle cleansing only." },
     { title: "II. Hydration", desc: "Balance is key. Use our signature balms sparingly to allow the skin to breathe while healing." },
     { title: "III. Longevity", desc: "Sun is the enemy of ink. Protect your investment with high-SPF shielding once fully healed." }
+  ],
+  blogs: [
+    {
+      id: 'types-of-tattoo',
+      title: 'Types Of Tattoo',
+      excerpt: 'Stylon Tattoo Studio provides a wide range of permanent tattoos including Portrait, Abstract, Maori, and more.',
+      content: 'Stylon Tattoo Studio provides wide range of permanent tattoo, include almost everything in the world of availability e.g. Portrait Tattoo, Abstract Tattoo, Couple Tattoo, Maori Tattoo, Tribal Tattoo and Many more.',
+      author: 'subsas',
+      date: 'August 24, 2018',
+      image: 'https://images.unsplash.com/photo-1550537687-c91072c4792d?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      id: 'body-piercing',
+      title: 'Body Piercing',
+      excerpt: 'Body piercing is the process of making an opening in the body for jewelry, chosen for self-expression and cultural traditions.',
+      content: 'Body piercing is the process of making an opening or hole in the body for jewelry to be inserted, usually for decorative or decorative purposes, parts of the body may be pierced, and over time, how the popularity of various disposables has improved. Body piercing has cultural, historical and personal significance, individuals choose to wear it for a variety of reasons ranging from self-expression, clothing to cultural and religious traditions.',
+      author: 'subsas',
+      date: 'August 7, 2018',
+      image: 'https://images.unsplash.com/photo-1560707854-fb9a10eeaebb?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      id: 'tattoo-removal',
+      title: 'Tattoo Removal',
+      excerpt: 'Professional process of eliminating or significantly reducing the visibility of a tattoo from the skin.',
+      content: 'Tattoo removal service refers to the professional process of eliminating or significantly reducing the visibility of a tattoo from the skin. This service is sought by individuals who wish to remove a previously inked tattoo for various reasons, such as a change in personal preferences, dissatisfaction with the existing tattoo, or the desire to get rid of a name or symbol associated with a past relationship.',
+      author: 'subsas',
+      date: 'July 27, 2018',
+      image: 'https://images.unsplash.com/photo-1512413316925-fd4b93f31521?auto=format&fit=crop&q=80&w=800'
+    },
+    {
+      id: 'hygiene-process',
+      title: 'Hygiene Process',
+      excerpt: 'Your safety is our priority. We adhere to the highest standards of cleanliness and hygiene.',
+      content: 'At Stylon Tattoo Studio, Your safety is our priority. Stylon Tattoo Studio adhere highest standards of cleanliness and hygiene. Our studio is equipped with state-of-the-art sterilization tools and gloves and all artists strictly follow health and safety protocols.',
+      author: 'subsas',
+      date: 'July 12, 2018',
+      image: 'https://images.unsplash.com/photo-1504198266389-823c515890fb?auto=format&fit=crop&q=80&w=800'
+    }
   ]
 };
 

@@ -6,6 +6,7 @@ import About from './components/About';
 import Artists from './components/Artists';
 import Styles from './components/Styles';
 import Gallery from './components/Gallery';
+import Blog from './components/Blog';
 import BookingForm from './components/BookingForm';
 import Footer from './components/Footer';
 import { APP_CONTENT } from './constants';
@@ -30,6 +31,8 @@ const App: React.FC = () => {
         <Styles />
         
         <Gallery />
+
+        <Blog />
         
         <div className="relative bg-black py-20 overflow-hidden">
            <div className="absolute top-0 right-0 w-96 h-96 bg-[#d4af37]/5 blur-[120px] rounded-full"></div>

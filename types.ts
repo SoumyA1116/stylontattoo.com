@@ -25,6 +25,16 @@ export interface AftercareStep {
   desc: string;
 }
 
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  date: string;
+  image: string;
+}
+
 export interface StudioInfo {
   name: string;
   phone: string;
@@ -49,4 +59,5 @@ export interface AppContent {
   styles: TattooStyle[];
   gallery: GalleryImage[];
   aftercare: AftercareStep[];
+  blogs: BlogPost[];
 }
