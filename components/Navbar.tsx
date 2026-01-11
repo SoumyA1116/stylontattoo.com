@@ -30,12 +30,12 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className={`glass-morphism rounded-full px-6 py-2 flex justify-between items-center transition-all bg-transparent border-transparent`}>
             <a href="#home" className="flex items-center group" onClick={() => setIsMobileMenuOpen(false)}>
-              <div className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 border-2 border-[#d4af37] rotate-45 group-hover:rotate-[225deg] transition-transform duration-700 overflow-hidden">
-                <span className="accent-font text-xl md:text-2xl text-[#d4af37] -rotate-45 group-hover:-rotate-[225deg] transition-transform duration-700">S</span>
-              </div>
-              <div className="ml-4 flex flex-col leading-none">
-                <span className="heading-font text-white text-[10px] md:text-xs tracking-[0.4em] font-bold">STYLON</span>
-                <span className="heading-font text-[#d4af37] text-[8px] md:text-[10px] tracking-[0.6em] font-light">TATTOO</span>
+              <div className="relative h-10 md:h-12 w-auto transition-transform duration-500 group-hover:scale-105">
+                <img 
+                  src="https://i.ibb.co/RTv8DMNf/stylon-logo.png" 
+                  alt="STYLON TATTOO Logo" 
+                  className="h-full w-auto object-contain brightness-110 drop-shadow-[0_0_8px_rgba(212,175,55,0.3)]"
+                />
               </div>
             </a>
 
@@ -61,8 +61,12 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-[95] md:hidden flex flex-col items-center justify-center space-y-8 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 translate-y-0 visible bg-black/95 backdrop-blur-xl' : 'opacity-0 -translate-y-full invisible'}`}>
-        <div className="mb-12 relative flex items-center justify-center w-24 h-24 border-2 border-[#d4af37] rotate-45">
-           <span className="accent-font text-5xl text-[#d4af37] -rotate-45">S</span>
+        <div className="mb-12">
+           <img 
+             src="https://i.ibb.co/RTv8DMNf/stylon-logo.png" 
+             alt="Logo" 
+             className="h-24 w-auto object-contain brightness-110"
+           />
         </div>
         {navLinks.map((link, idx) => (
           <a
