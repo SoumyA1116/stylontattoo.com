@@ -4,9 +4,9 @@ import { AppContent } from './types';
 export const APP_CONTENT: AppContent = {
   studio: {
     name: "STYLON TATTOO",
-    phone: "+1 (555) 012-3456",
+    phone: "+91 82702 29250",
     address: "42 Gothic Ave, Arts District, NY 10001",
-    whatsapp: "+91 82702 29250",
+    whatsapp: "918270229250",
     hours: "Mon-Sat: 11:00 AM - 9:00 PM",
     tagline: "Ink Your Story",
     heroImage: "https://images.unsplash.com/photo-1605647533135-51b5906087d0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&q=90&w=2400",
