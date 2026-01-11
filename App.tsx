@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,13 +12,41 @@ import Footer from './components/Footer';
 import { APP_CONTENT } from './constants';
 
 const App: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate asset loading or minimum wait for premium feel
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="bg-[#050505] min-h-screen text-[#fafafa] selection:bg-[#d4af37] selection:text-black">
+      {/* Premium Loader */}
+      <div className={`fixed inset-0 z-[2000] bg-[#050505] flex flex-col items-center justify-center transition-all duration-1000 ease-expo ${isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className="relative mb-8">
+           <img 
+             src="https://i.ibb.co/RTv8DMNf/stylon-logo.png" 
+             alt="Logo" 
+             className={`h-24 md:h-32 w-auto object-contain transition-all duration-1000 ${isLoading ? 'scale-100 opacity-100 blur-0' : 'scale-110 opacity-0 blur-xl'}`}
+           />
+           <div className="absolute -inset-4 bg-[#d4af37]/10 blur-2xl rounded-full animate-pulse"></div>
+        </div>
+        <div className="w-48 h-[2px] bg-white/5 relative overflow-hidden rounded-full">
+           <div className="absolute inset-0 bg-[#d4af37] origin-left animate-[loadingLine_2s_ease-in-out_infinite]"></div>
+        </div>
+        <span className="heading-font text-[#d4af37] text-[10px] uppercase tracking-[0.6em] mt-6 animate-pulse">
+          Crafting Your Vision
+        </span>
+      </div>
+
       <div className="fixed inset-0 pointer-events-none z-50 cinematic-vignette"></div>
       
       <Navbar />
       
-      <main className="relative z-10">
+      <main className={`relative z-10 transition-all duration-1000 ${isLoading ? 'opacity-0 scale-95 blur-lg' : 'opacity-100 scale-100 blur-0'}`}>
         <Hero />
         
         <div className="relative">
@@ -67,6 +95,12 @@ const App: React.FC = () => {
       <Footer />
 
       <style>{`
+        @keyframes loadingLine {
+          0% { transform: scaleX(0); transform-origin: left; }
+          45% { transform: scaleX(1); transform-origin: left; }
+          50% { transform: scaleX(1); transform-origin: right; }
+          100% { transform: scaleX(0); transform-origin: right; }
+        }
         @keyframes fadeIn {
           from { opacity: 0; filter: blur(10px); }
           to { opacity: 1; filter: blur(0); }

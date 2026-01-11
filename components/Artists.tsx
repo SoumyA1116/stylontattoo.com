@@ -14,10 +14,11 @@ const Artists: React.FC = () => {
           <div className="w-px h-12 md:h-24 bg-gradient-to-b from-[#d4af37] to-transparent mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-12">
+        {/* Mobile: Horizontal scroll | Desktop: Grid */}
+        <div className="flex md:grid md:grid-cols-3 gap-8 md:gap-12 overflow-x-auto no-scrollbar pb-8 md:pb-0 snap-x snap-mandatory">
           {APP_CONTENT.artists.map((artist, idx) => (
-            <div key={idx} className="group relative flex flex-col items-center">
-              <div className="relative aspect-[3/4] w-full max-w-[320px] md:max-w-none image-curve liquid-border bg-zinc-900 mb-8">
+            <div key={idx} className="group relative flex flex-col items-center min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-center">
+              <div className="relative aspect-[3/4] w-full image-curve liquid-border bg-zinc-900 mb-8">
                 <img 
                   src={artist.image} 
                   alt={artist.name} 
@@ -31,11 +32,18 @@ const Artists: React.FC = () => {
                 </div>
               </div>
 
-              <div className="text-center">
+              <div className="text-center px-4">
                 <h3 className="heading-font text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-2">{artist.name}</h3>
                 <p className="serif-font italic text-gray-500 text-base md:text-xl">{artist.role}</p>
               </div>
             </div>
+          ))}
+        </div>
+        
+        {/* Mobile Indicator */}
+        <div className="flex md:hidden justify-center space-x-2 mt-4">
+          {APP_CONTENT.artists.map((_, i) => (
+            <div key={i} className="w-1 h-1 rounded-full bg-white/20"></div>
           ))}
         </div>
       </div>

@@ -14,9 +14,9 @@ const Blog: React.FC = () => {
           <div className="w-px h-12 md:h-24 bg-gradient-to-b from-[#d4af37] to-transparent mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex lg:grid lg:grid-cols-4 gap-6 md:gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-8 lg:pb-0">
           {APP_CONTENT.blogs.map((post) => (
-            <article key={post.id} className="group flex flex-col h-full bg-zinc-950/50 rounded-[2rem] overflow-hidden liquid-border border border-white/5 hover:border-[#d4af37]/30 transition-all duration-500">
+            <article key={post.id} className="group flex flex-col h-full bg-zinc-950/50 rounded-[2rem] overflow-hidden liquid-border border border-white/5 hover:border-[#d4af37]/30 transition-all duration-500 min-w-[280px] md:min-w-[350px] lg:min-w-0 snap-center">
               <div className="relative aspect-video overflow-hidden">
                 <img 
                   src={post.image} 
@@ -31,11 +31,11 @@ const Blog: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-8 flex flex-col flex-grow">
-                <h3 className="heading-font text-2xl font-bold text-white uppercase mb-4 group-hover:text-[#d4af37] transition-colors line-clamp-2">
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <h3 className="heading-font text-xl md:text-2xl font-bold text-white uppercase mb-4 group-hover:text-[#d4af37] transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                <p className="text-gray-500 text-sm font-light leading-relaxed mb-6 line-clamp-3">
+                <p className="text-gray-500 text-xs md:text-sm font-light leading-relaxed mb-6 line-clamp-3">
                   {post.excerpt}
                 </p>
                 <div className="mt-auto flex items-center justify-between">

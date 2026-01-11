@@ -14,7 +14,7 @@ const Gallery: React.FC = () => {
   return (
     <section id="gallery" className="py-24 md:py-40 bg-black">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-16 gap-8">
           <div className="text-center md:text-left">
             <span className="accent-font text-[#d4af37] text-xl md:text-2xl block mb-2 italic">The Collection</span>
             <h2 className="heading-font text-5xl md:text-7xl font-light uppercase tracking-tighter leading-none text-white">Visual Anthology</h2>
@@ -33,11 +33,12 @@ const Gallery: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        {/* Mobile: Horizontal scroll | Desktop: Grid */}
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-8 md:pb-0">
           {filteredImages.map((image) => (
             <div
               key={image.id}
-              className="relative aspect-[4/5] cursor-pointer group image-curve-sm liquid-border"
+              className="relative aspect-[4/5] cursor-pointer group image-curve-sm liquid-border min-w-[260px] md:min-w-0 snap-center"
               onClick={() => setSelectedImage(image.url)}
             >
               <img
@@ -49,6 +50,10 @@ const Gallery: React.FC = () => {
               <div className="absolute inset-0 bg-black/60 opacity-0 md:group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-6 text-center">
                 <span className="heading-font text-[#d4af37] text-[9px] uppercase tracking-[0.4em] mb-2">{image.category}</span>
                 <h4 className="heading-font text-white text-base uppercase tracking-widest">{image.title}</h4>
+              </div>
+              {/* Mobile title overlay */}
+              <div className="absolute bottom-4 left-4 right-4 md:hidden">
+                 <h4 className="heading-font text-white text-xs uppercase tracking-widest bg-black/40 backdrop-blur-sm px-3 py-2 rounded-lg inline-block">{image.title}</h4>
               </div>
             </div>
           ))}
