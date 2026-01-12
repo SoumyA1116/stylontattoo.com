@@ -13,43 +13,90 @@ import { APP_CONTENT } from './constants';
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
-    return () => clearTimeout(timer);
+    // 1. Lock scrolling immediately
+    document.body.style.overflow = 'hidden';
+
+    // 2. Visual Progress Simulation (High Performance)
+    let startTimestamp: number | null = null;
+    const duration = 1800; // 1.8 seconds for the progress bar
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const elapsed = timestamp - startTimestamp;
+      const currentProgress = Math.min((elapsed / duration) * 100, 100);
+      
+      setProgress(Math.floor(currentProgress));
+
+      if (elapsed < duration) {
+        window.requestAnimationFrame(step);
+      } else {
+        // Finalize loading after animation completes
+        setTimeout(() => {
+          setIsLoading(false);
+          document.body.style.overflow = 'auto';
+        }, 400);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+
+    // 3. Robust Cleanup / Failsafe
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, []);
 
   return (
-    <div className="bg-[#050505] min-h-screen text-[#fafafa] selection:bg-[#d4af37] selection:text-black">
-      {/* Premium Loader */}
-      <div className={`fixed inset-0 z-[2000] bg-[#050505] flex flex-col items-center justify-center transition-all duration-1000 ease-expo ${isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        <div className="relative mb-8">
-           <img 
-             src="https://i.ibb.co/RTv8DMNf/stylon-logo.png" 
-             alt="Logo" 
-             className={`h-24 md:h-32 w-auto object-contain transition-all duration-1000 ${isLoading ? 'scale-100 opacity-100 blur-0' : 'scale-110 opacity-0 blur-xl'}`}
-           />
-           <div className="absolute -inset-4 bg-[#d4af37]/10 blur-2xl rounded-full animate-pulse"></div>
+    <div className="bg-[#050505] min-h-screen text-[#fafafa] selection:bg-[#d4af37] selection:text-black overflow-x-hidden">
+      {/* Premium Cinematic Loader */}
+      <div 
+        className={`fixed inset-0 z-[2000] bg-[#050505] flex flex-col items-center justify-center transition-all duration-1000 ease-in-out ${
+          isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none translate-y-[-50px]'
+        }`}
+      >
+        <div className="relative flex flex-col items-center scale-90 md:scale-100">
+           <div className="relative mb-12">
+             <img 
+               src="https://i.ibb.co/RTv8DMNf/stylon-logo.png" 
+               alt="Logo" 
+               className={`h-24 md:h-32 w-auto object-contain transition-all duration-1000 ${
+                 isLoading ? 'scale-100 opacity-100' : 'scale-110 opacity-0 blur-2xl'
+               }`}
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-40"></div>
+           </div>
+           
+           <div className="w-64 h-[1px] bg-white/5 relative overflow-hidden mb-6 rounded-full">
+              <div 
+                className="absolute inset-0 bg-[#d4af37] origin-left transition-transform duration-300 ease-out"
+                style={{ transform: `scaleX(${progress / 100})` }}
+              ></div>
+           </div>
+           
+           <div className="flex flex-col items-center">
+             <span className="heading-font text-[#d4af37] text-[10px] uppercase tracking-[0.8em] font-light animate-pulse">
+               {progress < 100 ? `Crafting Heritage ${progress}%` : 'Studio Ready'}
+             </span>
+           </div>
         </div>
-        <div className="w-48 h-[2px] bg-white/5 relative overflow-hidden rounded-full">
-           <div className="absolute inset-0 bg-[#d4af37] origin-left animate-[loadingLine_2s_ease-in-out_infinite]"></div>
-        </div>
-        <span className="heading-font text-[#d4af37] text-[10px] uppercase tracking-[0.6em] mt-6 animate-pulse">
-          Crafting Your Vision
-        </span>
       </div>
 
-      <div className="fixed inset-0 pointer-events-none z-50 cinematic-vignette"></div>
+      <div className="fixed inset-0 pointer-events-none z-50 cinematic-vignette opacity-40"></div>
       
       <Navbar />
       
-      <main className={`relative z-10 transition-all duration-1000 ${isLoading ? 'opacity-0 scale-95 blur-lg' : 'opacity-100 scale-100 blur-0'}`}>
+      <main 
+        className={`relative z-10 transition-all duration-[1500ms] ${
+          isLoading ? 'opacity-0 scale-95 blur-xl translate-y-20' : 'opacity-100 scale-100 blur-0 translate-y-0'
+        }`}
+      >
         <Hero />
         
         <div className="relative">
-           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 md:h-64 bg-gradient-to-b from-[#d4af37]/50 to-transparent"></div>
+           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 md:h-64 bg-gradient-to-b from-[#d4af37]/40 to-transparent"></div>
            <About />
         </div>
 
@@ -94,33 +141,21 @@ const App: React.FC = () => {
       <Footer />
 
       <style>{`
-        @keyframes loadingLine {
-          0% { transform: scaleX(0); transform-origin: left; }
-          45% { transform: scaleX(1); transform-origin: left; }
-          50% { transform: scaleX(1); transform-origin: right; }
-          100% { transform: scaleX(0); transform-origin: right; }
+        .cinematic-vignette {
+          background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%);
         }
-        @keyframes fadeIn {
-          from { opacity: 0; filter: blur(10px); }
-          to { opacity: 1; filter: blur(0); }
-        }
+
         @keyframes fadeInUp {
           from { 
             opacity: 0; 
-            transform: translateY(40px);
-            filter: blur(10px);
+            transform: translateY(30px);
+            filter: blur(8px);
           }
           to { 
             opacity: 1; 
             transform: translateY(0);
             filter: blur(0);
           }
-        }
-        .ease-expo {
-          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-        }
-        html {
-          scroll-behavior: smooth;
         }
       `}</style>
     </div>

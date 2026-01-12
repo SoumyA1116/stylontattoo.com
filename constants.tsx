@@ -64,7 +64,7 @@ export const APP_CONTENT: AppContent = {
     }
   ],
   gallery: [
-    { id: 1, url: 'https://picsum.photos/id/10/800/1000', category: 'Realism', title: 'Deep Forest' },
+    { id: 1, url: 'https://lh3.googleusercontent.com/p/AF1QipO-AzD0qFH5MfoZcoL0LLLuz8-mcrlZk-yZtj1X=s4000', category: 'Realism', title: 'Deep Forest' },
     { id: 2, url: 'https://picsum.photos/id/12/800/1000', category: 'Geometric', title: 'Sacred Lines' },
     { id: 3, url: 'https://picsum.photos/id/15/800/1000', category: 'Traditional', title: 'Ancient Anchor' },
     { id: 4, url: 'https://picsum.photos/id/20/800/1000', category: 'Portrait', title: 'The Seer' },
