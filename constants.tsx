@@ -63,9 +63,10 @@ export const APP_CONTENT: AppContent = {
     { id: 3, url: 'https://i.ibb.co/4R2FpzmK/image.png', category: 'Traditional', title: 'Ancient Anchor' },
     { id: 4, url: 'https://i.ibb.co/DPc4JL1B/image.png', category: 'Portrait', title: 'The Seer' },
     { id: 5, url: 'https://i.ibb.co/gb5cbJ7b/unnamed-1.jpg', category: 'Realism', title: 'Wolf Spirit' },
-    { id: 6, url: 'https://picsum.photos/id/30/800/1000', category: 'Minimalist', title: 'Single Needle' },
-    { id: 7, url: 'https://picsum.photos/id/35/800/1000', category: 'Color', title: 'Abstract Bloom' },
-    { id: 8, url: 'https://picsum.photos/id/40/800/1000', category: 'Black & Grey', title: 'Stone Heart' },
+    { id: 6, url: 'https://i.ibb.co/JRzXmNCb/image.png', category: 'Minimalist', title: 'Single Needle' },
+    { id: 7, url: 'https://i.ibb.co/KxN9KfCw/image.png', category: 'Color', title: 'Abstract Bloom' },
+    { id: 8, url: 'https://i.ibb.co/fzYXcDDK/image.png', category: 'Black & Grey', title: 'Stone Heart' },
+    { id: 8, url: 'https://i.ibb.co/MDBBhMnn/image.png', category: 'Black & Grey', title: 'Stone Heart' },
   ],
   aftercare: [
     { title: "I. Protection", desc: "The first 72 hours are critical. Treat your skin as a masterpiece in progress. Gentle cleansing only." },
