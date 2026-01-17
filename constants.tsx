@@ -4,37 +4,31 @@ import { AppContent } from './types';
 export const APP_CONTENT: AppContent = {
   studio: {
     name: "STYLON TATTOO",
-    phone: "+91 82702 29250",
-    address: "42 Gothic Ave, Arts District, NY 10001",
-    whatsapp: "918270229250",
-    hours: "Mon-Sat: 11:00 AM - 9:00 PM",
+    phone: "+918908697012",
+    address: "BMC Bhawani Mall, First Floor, Block Number-3, Shop No-2, Saheed Nagar, Maharishi College Road, Bhubaneshwar, Odisha - 751007",
+    whatsapp: "918908697012",
+    hours: "Everyday : 10:30 AM - 9:30 PM",
     tagline: "Ink Your Story",
     heroImage: "https://images.unsplash.com/photo-1605647533135-51b5906087d0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&q=90&w=2400",
     aboutImage: "https://lh3.googleusercontent.com/p/AF1QipNCU78jffEuT5aNPmpKH62uYcUBHrR1wvEGSNut=s4000?auto=format&fit=crop&q=90&w=1200"
   },
   social: {
-    instagram: "https://instagram.com/stylontattoo",
-    facebook: "https://facebook.com/stylontattoo",
-    youtube: "https://youtube.com/@stylontattoo"
+    instagram: "https://instagram.com/",
+    facebook: "https://www.facebook.com/https://www.facebook.com/people/Stylon-Tattoos/100044550356886/",
+    youtube: "https://youtu.be/dKU2zl0lPBE"
   },
   artists: [
     {
-      name: "Victor Thorne",
-      role: "Master of Realism",
-      image: "https://images.unsplash.com/photo-1590548784585-645d8b75e646?auto=format&fit=crop&q=90&w=800",
-      specialty: "Hyper-realism & Portraits"
+      name: "B.Anil",
+      role: "Certified Tattoo Artist & Piercer",
+      image: "https://i.ibb.co/wN63gKpR/image.png?auto=format&fit=crop&q=90&w=800",
+      specialty: "Certified Tattoo Artist & Piercer"
     },
     {
-      name: "Elena Varkov",
-      role: "Illustrative Specialist",
-      image: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&q=90&w=800",
-      specialty: "Fine Line & Geometry"
-    },
-    {
-      name: "Marcus Black",
-      role: "Traditionalist",
-      image: "https://images.unsplash.com/photo-15423938818e1-b1d3f1c2ca3e?auto=format&fit=crop&q=90&w=800",
-      specialty: "Neo-Traditional & Bold Color"
+      name: "Jacky Pani",
+      role: "Certified Tattoo Artist & Piercer",
+      image: "https://i.ibb.co/1YM5Hrjn/image.png?auto=format&fit=crop&q=90&w=800",
+      specialty: "Certified Tattoo Artist & Piercer"
     }
   ],
   styles: [
@@ -54,13 +48,13 @@ export const APP_CONTENT: AppContent = {
       id: 'traditional',
       name: 'Traditional',
       description: 'Bold lines and vibrant primary colors. Classic Americana style that lasts a lifetime.',
-      image: 'https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&q=80&w=800'
+      image: 'https://images.unsplash.com/photo-1558355637-e991f0422e08?auto=format&fit=crop&q=80&w=800'
     },
     {
       id: 'portrait',
       name: 'Portrait',
       description: 'Capturing the soul of your loved ones or icons with photographic precision.',
-      image: 'https://images.unsplash.com/photo-1562967914-6cbb65181734?auto=format&fit=crop&q=80&w=800'
+      image: 'https://images.unsplash.com/flagged/photo-1575495407752-bfb6fb0518bf?q=80&w=829&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     }
   ],
   gallery: [
